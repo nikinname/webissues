@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    webissues:
+        ports:
+            - '80:80'
+        volumes:
+            - './webissues-server-2.0.2:/var/www/html'
+            - './data:/var/www/html/data'
+        image: 'nikinname/webissues:2.0.2'
+
