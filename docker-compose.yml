@@ -7,4 +7,14 @@ services:
             - './webissues-server-2.0.2:/var/www/html'
             - './data:/var/www/html/data'
         image: 'nikinname/webissues:2.0.2'
+    db:
+        image: mariadb:10.5.9
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: LaMiaSegretissimaPassword
+          MYSQL_DATABASE: webissues
+          MYSQL_USER: webissues
+          MYSQL_PASSWORD: webissues
+        volumes:
+            - './dbdata:/var/lib/mysql'
 
