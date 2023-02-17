@@ -4,9 +4,9 @@ services:
         ports:
             - '80:80'
         volumes:
-            - './webissues-server-2.0.2:/var/www/html'
+            - './webissues-server-1.1.2:/var/www/html'
             - './data:/var/www/html/data'
-        image: 'nikinname/webissues:2.0.2'
+        image: 'nikinname/webissues:prod'
     db:
         image: mariadb:10.5.9
         restart: always
@@ -24,3 +24,4 @@ services:
           - 8080:80
         environment:
           - PMA_ARBITRARY=1
+          - UPLOAD_LIMIT=300M
